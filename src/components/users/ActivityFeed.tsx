@@ -4,7 +4,7 @@ import type { AnalyticsEvent, EventType } from '../../types/event';
 import { formatDate, formatTime, humanizeKey } from '../../utils/format';
 import { Card } from '../ui/Card';
 
-const INDICATOR: Record<EventType, string> = {
+export const INDICATOR: Record<EventType, string> = {
   page_viewed: 'bg-green-500',
   login: 'bg-sky-500',
   logout: 'bg-slate-400',
@@ -21,7 +21,7 @@ const INDICATOR: Record<EventType, string> = {
 type Filter = 'all' | 'pages';
 
 // The short secondary text shown next to the event name.
-function summary(event: AnalyticsEvent): string | undefined {
+export function summary(event: AnalyticsEvent): string | undefined {
   const props = event.properties;
   if (!props) return undefined;
   if (event.type === 'page_viewed') return String(props.pathname);

@@ -1,11 +1,13 @@
 import type { User } from '../types/user';
 import { minutesAgo } from './time';
+import { ENV_TEST1_STOREFRONT_DEV, ENV_TEST1_STOREFRONT_PROD, ENV_TEST_WEBSITE_DEV, ENV_TEST_WEBSITE_PROD } from './seed';
 
 const DAY = 60 * 24;
 
 export const users: User[] = [
   {
     id: 'user_001',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'John Smith',
     email: 'john.smith@example.com',
     accountId: 'acc_7Kq2mZp4Xr9Lw1Td',
@@ -20,6 +22,7 @@ export const users: User[] = [
   },
   {
     id: 'user_002',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'Sarah Wilson',
     email: 'sarah.wilson@example.com',
     accountId: 'acc_3Fh8nQs1Vb6Yc0Ke',
@@ -34,6 +37,7 @@ export const users: User[] = [
   },
   {
     id: 'user_003',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'Michael Brown',
     email: 'm.brown@example.com',
     accountId: 'acc_9Jd4tLx7Pw2Ra5Gn',
@@ -48,6 +52,7 @@ export const users: User[] = [
   },
   {
     id: 'user_004',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'David Miller',
     email: 'david.miller@example.com',
     accountId: 'acc_1Mv6sHk3Bz8Qf4Ua',
@@ -62,6 +67,7 @@ export const users: User[] = [
   },
   {
     id: 'user_005',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'Emma Johnson',
     email: 'emma.j@example.com',
     accountId: 'acc_5Wc0rNy2Gt7Hs9Ox',
@@ -76,6 +82,7 @@ export const users: User[] = [
   },
   {
     id: 'user_006',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'Alex Carter',
     email: 'alex.carter@example.com',
     accountId: 'acc_8Pe3vDu6Ji1Ly4Mb',
@@ -90,6 +97,7 @@ export const users: User[] = [
   },
   {
     id: 'user_007',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'Olivia Davis',
     email: 'olivia.davis@example.com',
     accountId: 'acc_2Rk9bFw5Cq0Ev7Zs',
@@ -104,6 +112,7 @@ export const users: User[] = [
   },
   {
     id: 'user_008',
+    environmentId: ENV_TEST_WEBSITE_PROD,
     name: 'James Anderson',
     email: 'j.anderson@example.com',
     accountId: 'acc_6Tn1yGa8Xh3Kd2Wp',
@@ -118,6 +127,7 @@ export const users: User[] = [
   },
   {
     id: 'user_009',
+    environmentId: ENV_TEST_WEBSITE_DEV,
     name: 'Sophia Martinez',
     email: 'sophia.m@example.com',
     accountId: 'acc_4Ub7cJe0Sm5Nr8Qi',
@@ -132,6 +142,7 @@ export const users: User[] = [
   },
   {
     id: 'user_010',
+    environmentId: ENV_TEST_WEBSITE_DEV,
     name: 'Daniel Lee',
     email: 'daniel.lee@example.com',
     accountId: 'acc_0Yf2hMo9Ta4Gx6Ld',
@@ -146,6 +157,7 @@ export const users: User[] = [
   },
   {
     id: 'user_011',
+    environmentId: ENV_TEST1_STOREFRONT_PROD,
     name: 'Chloe Thompson',
     email: 'chloe.t@example.com',
     accountId: 'acc_7Gs5kWi2Ub1Ce9Ry',
@@ -160,6 +172,7 @@ export const users: User[] = [
   },
   {
     id: 'user_012',
+    environmentId: ENV_TEST1_STOREFRONT_PROD,
     name: 'Ryan Patel',
     email: 'ryan.patel@example.com',
     accountId: 'acc_3Lx8oVr6Ny0Hj2Fc',
@@ -172,8 +185,72 @@ export const users: User[] = [
     isInternalUser: false,
     isFtdCompleted: true,
   },
+  {
+    id: 'user_013',
+    environmentId: ENV_TEST1_STOREFRONT_PROD,
+    name: 'Lucas Rossi',
+    email: 'lucas.rossi@example.com',
+    accountId: 'acc_2Nd5qZt8Lc1Vw6Hb',
+    country: 'Italy',
+    deviceType: 'desktop',
+    firstSeenAt: minutesAgo(DAY * 21),
+    lastSeenAt: minutesAgo(12),
+    signedUpAt: minutesAgo(DAY * 21),
+    isEmailVerified: true,
+    isInternalUser: false,
+    isFtdCompleted: true,
+  },
+  {
+    id: 'user_014',
+    environmentId: ENV_TEST1_STOREFRONT_PROD,
+    name: 'Mia Kowalski',
+    email: 'mia.k@example.com',
+    accountId: 'acc_9Rf0wKs3Pd7Ym2Tg',
+    country: 'Poland',
+    deviceType: 'mobile',
+    firstSeenAt: minutesAgo(DAY * 4),
+    lastSeenAt: minutesAgo(48),
+    signedUpAt: minutesAgo(DAY * 4),
+    isEmailVerified: false,
+    isInternalUser: false,
+    isFtdCompleted: false,
+  },
+  {
+    id: 'user_015',
+    environmentId: ENV_TEST1_STOREFRONT_DEV,
+    name: 'Noah Fischer',
+    email: 'noah.fischer@example.com',
+    accountId: 'acc_6Bh1eXm4Qa8Jr3Uz',
+    country: 'Austria',
+    deviceType: 'desktop',
+    firstSeenAt: minutesAgo(DAY * 60),
+    lastSeenAt: minutesAgo(25),
+    signedUpAt: minutesAgo(DAY * 60),
+    isEmailVerified: true,
+    isInternalUser: true,
+    isFtdCompleted: false,
+  },
+  {
+    id: 'user_016',
+    environmentId: ENV_TEST_WEBSITE_DEV,
+    name: 'Hana Sato',
+    email: 'hana.sato@example.com',
+    accountId: 'acc_3Kv7gWp0Ns5Ld9Ce',
+    country: 'Japan',
+    deviceType: 'tablet',
+    firstSeenAt: minutesAgo(DAY * 10),
+    lastSeenAt: minutesAgo(8),
+    signedUpAt: minutesAgo(DAY * 10),
+    isEmailVerified: true,
+    isInternalUser: true,
+    isFtdCompleted: false,
+  },
 ];
 
 export function getUserById(id: string): User | undefined {
   return users.find((user) => user.id === id);
+}
+
+export function getUsersForEnvironment(environmentId: string): User[] {
+  return users.filter((user) => user.environmentId === environmentId);
 }

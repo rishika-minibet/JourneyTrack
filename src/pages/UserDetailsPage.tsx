@@ -6,19 +6,27 @@ import { Avatar } from '../components/ui/Avatar';
 import { UserDetails } from '../components/users/UserDetails';
 import { UserAttributes } from '../components/users/UserAttributes';
 import { ActivityFeed } from '../components/users/ActivityFeed';
+import { useWorkspace } from '../hooks/useWorkspace';
 
 export function UserDetailsPage() {
   const { userId = '' } = useParams();
-  const user = getUserById(userId);
+  const { environment } = useWorkspace();
+  // A tracked user is only visible inside the environment that reported them.
+  const candidate = getUserById(userId);
+  const user = candidate && candidate.environmentId === environment?.id ? candidate : undefined;
 
   if (!user) {
     return (
       <div className="mx-auto max-w-6xl">
         <BackLink />
-        <p className="mt-6 text-muted">User not found.</p>
+        <p className="mt-6 text-muted">
+          User not found{environment ? ` in the ${environment.name} environment` : ''}.
+        </p>
       </div>
     );
   }
+
+  const events = getEventsForUser(user.id).filter((event) => event.environmentId === user.environmentId);
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -34,7 +42,7 @@ export function UserDetailsPage() {
           <UserAttributes user={user} />
         </div>
         <div className="lg:col-start-1 lg:row-start-2">
-          <ActivityFeed events={getEventsForUser(user.id)} />
+          <ActivityFeed events={events} />
         </div>
       </div>
     </div>

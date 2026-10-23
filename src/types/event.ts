@@ -15,6 +15,7 @@ export type EventPropertyValue = string | number | boolean;
 
 export interface AnalyticsEvent {
   id: string;
+  environmentId: string;
   userId: string;
   type: EventType;
   name: string;
